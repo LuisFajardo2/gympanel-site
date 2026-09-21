@@ -38,9 +38,9 @@ img { max-width: 100%; }
 }
 .nav { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
 .brand { display: inline-flex; align-items: center; gap: 11px; text-decoration: none; }
-.brand img { display: block; width: 72px; height: 48px; object-fit: cover; border-radius: 10px; box-shadow: 0 6px 18px rgba(255, 204, 0, .2); }
-.brand-name { color: var(--ink); font-size: 1.65rem; font-weight: 900; letter-spacing: -.055em; line-height: 1; }
-.brand-name span { color: #e5a900; }
+.brand img { display: block; width: 68px; height: 45px; object-fit: cover; border-radius: 10px; box-shadow: 0 6px 18px rgba(217, 99, 0, .22); }
+.brand-name { color: var(--ink); font-size: 1.55rem; font-weight: 900; letter-spacing: -.05em; line-height: 1; }
+.brand-name span { color: var(--orange-dark); }
 .nav-links { display: flex; align-items: center; gap: 26px; font-size: 0.95rem; font-weight: 700; }
 .nav-links a { text-decoration: none; }
 .nav-links a:hover { color: var(--orange-dark); }
@@ -121,7 +121,7 @@ h3 { font-size: 1.25rem; }
 .footer-grid { display: grid; grid-template-columns: 1.4fr .8fr .8fr; gap: 30px; }
 .brand-footer { margin-bottom: 14px; }
 .brand-footer .brand-name { color: #fff; }
-.brand-footer img { width: 78px; height: 52px; padding: 2px; background: #fff; }
+.brand-footer img { width: 74px; height: 49px; padding: 2px; background: #fff; }
 .brand-404 { justify-content: center; margin-inline: auto; }
 .footer-grid h3 { color: #fff; font-size: 1rem; }
 .footer-grid a { display: block; margin: 8px 0; color: #cbd3df; text-decoration: none; }
@@ -160,9 +160,9 @@ h3 { font-size: 1.25rem; }
 @media (max-width: 580px) {
   .container { width: min(100% - 28px, 1120px); }
   .brand { gap: 9px; }
-  .brand img { width: 60px; height: 40px; border-radius: 8px; }
-  .brand-name { font-size: 1.4rem; }
-  .brand-footer img { width: 72px; height: 48px; }
+  .brand img { width: 56px; height: 37px; border-radius: 8px; }
+  .brand-name { font-size: 1.3rem; }
+  .brand-footer img { width: 68px; height: 45px; }
   .feature-grid, .steps, .footer-grid, .contact-grid, .pricing-options { grid-template-columns: 1fr; }
   .offer-price, .offer-details { padding: 30px 24px; }
   .offer-details .checks { columns: 1; }
