@@ -49,6 +49,11 @@ img { max-width: 100%; }
 .nav-links a:hover { color: var(--orange-dark); }
 .nav-cta { padding: 11px 18px; color: #fff !important; background: var(--dark); border-radius: 999px; }
 .menu-button { display: none; border: 0; background: transparent; font-size: 1.45rem; cursor: pointer; }
+.menu-button { min-width: 44px; min-height: 44px; }
+.nav-links a { min-height: 44px; display: inline-flex; align-items: center; }
+.nav-links a[aria-current="page"] { color: #b74b00; }
+a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px solid #b74b00; outline-offset: 4px; }
+[id] { scroll-margin-top: 100px; }
 
 .hero {
   overflow: hidden;
@@ -143,6 +148,10 @@ h3 { font-size: 1.25rem; }
 .pricing-options { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin-top: 28px; }
 .pricing-option { padding: 22px; border: 1px solid var(--line); border-radius: 18px; background: #fff; }
 .pricing-option strong { display: block; font-size: 1.7rem; }
+.regular-plans-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+.regular-plans-grid .pricing-option { padding: 28px; }
+.regular-plans-grid .pricing-option small { font-size: 1rem; font-weight: 400; }
+.regular-plans-grid .pricing-option a { color: #b74b00; font-weight: 700; text-underline-offset: 3px; }
 .contact-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
 .contact-card { padding: 30px; border: 1px solid var(--line); border-radius: var(--radius); background: #fff; }
 
@@ -201,6 +210,7 @@ h3 { font-size: 1.25rem; }
   .site-header .brand-name { font-size: 30px; }
   .brand-footer img { width: 68px; height: 45px; }
   .feature-grid, .steps, .footer-grid, .contact-grid, .pricing-options { grid-template-columns: 1fr; }
+  .regular-plans-grid { grid-template-columns: 1fr; }
   .offer-price, .offer-details { padding: 30px 24px; }
   .offer-details .checks { columns: 1; }
   .section { padding: 70px 0; }
