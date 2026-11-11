@@ -35,6 +35,7 @@
     .pricing-page .gp-plan-list { padding:0; margin:13px 0 22px; list-style:none; font-size:13px; }
     .pricing-page .gp-plan-list li { display:flex; align-items:baseline; gap:9px; margin:8px 0; }
     .pricing-page .gp-plan-list li::before { content:"✓"; color:var(--gp-accent); }
+    .pricing-page .gp-plan-list li.gp-plan-unavailable::before { content:"—"; color:var(--gp-muted); }
     .pricing-page .gp-plan-pro .gp-plan-list li::before { color:#ffb85e; }
     .pricing-page .gp-button { display:flex; align-items:center; justify-content:center; text-align:center; min-height:46px; padding:11px 13px; border:1px solid var(--gp-line); border-radius:999px; background:var(--gp-bg); color:var(--gp-ink); font-size:13px; font-weight:750; margin-top:auto; text-decoration:none; }
     .pricing-page .gp-button-primary { background:var(--gp-action); color:#fff; border-color:var(--gp-action); }
