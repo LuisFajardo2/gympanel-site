@@ -29,7 +29,11 @@ test('all local links, anchors and assets resolve', () => {
 
 test('plan enquiries have the approved prices, limits and official WhatsApp destination', () => {
   const html = read('planes.html');
-  const expected = { Starter: ['S/39', 'S/59', '350', '30 días', '3 meses'], Regular: ['S/59', '350'], Pro: ['S/130', '900'] };
+  const expected = {
+    Starter: ['S/39', 'S/59', '350', '30 días', '3 meses', '3 usuarios', 'Caja opcional de pago', 'precio por definir'],
+    Regular: ['S/59', '350', '3 usuarios', 'Caja opcional de pago', 'precio por definir'],
+    Pro: ['S/130', '900', '5 usuarios', 'Caja incluida'],
+  };
   const links = [...html.matchAll(/<a[^>]*data-plan="([^"]+)"[^>]*href="([^"]+)"[^>]*>/g)];
   assert.equal(links.length, 3);
   for (const [tag, plan, href] of links) {
@@ -53,6 +57,13 @@ test('commercial content distinguishes the temporary offer and final regular pri
   }
   for (const page of pages) assert.doesNotMatch(read(page), /400\s*(?:<[^>]+>\s*)*miembros/i, page);
   assert.match(plans, /Atención presencial opcional/);
+  const cards = [...plans.matchAll(/<article class="gp-plan\b[^"]*">([\s\S]*?)<\/article>/g)].map((match) => match[1]);
+  assert.equal(cards.length, 3);
+  for (const [index, plan] of ['Starter', 'Regular', 'Pro'].entries()) {
+    assert.ok(cards[index].includes('<h2>' + plan + '</h2>'), plan);
+    assert.ok(cards[index].includes(plan === 'Pro' ? '5 usuarios en total' : '3 usuarios en total'), plan);
+    assert.ok(cards[index].includes(plan === 'Pro' ? 'Caja incluida' : 'Caja opcional, con pago aparte'), plan);
+  }
   assert.match(read('soporte.html'), /No está incluida en la mensualidad/);
   assert.doesNotMatch(plans, /data-lucide|Tweak|Vista preliminar|data-gp-logo/);
 });
